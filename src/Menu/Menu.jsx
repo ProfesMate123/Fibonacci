@@ -1,12 +1,17 @@
 import {  Link } from "react-router-dom"
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'animate.css'
+
 
 export function Menu() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary animate__animated  animate__shakeX">
         <div className="container-fluid">
+         <i className="">Fibonnaci</i>
+         <i class="bi bi-calculator"></i>
           <Link className="navbar-brand" href="#">
-            Fibonacci
+            
           </Link>
           <button
             className="navbar-toggler"
@@ -71,7 +76,8 @@ export function Menu() {
         </div>
       </nav>
 
-      <img src="https://firebasestorage.googleapis.com/v0/b/ygttienda.appspot.com/o/Logo.png?alt=media&token=02a33776-4513-4e1f-bd0e-841f185678b7" alt="" />
+      
+
     </>
   );
 }
