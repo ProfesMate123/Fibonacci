@@ -1,8 +1,24 @@
+.carrusel{
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/fibona-bbfed.appspot.com/o/fondo.jpg?alt=media&token=fb68e000-ce86-4834-adb6-aa9c1136462f);
+
+
+}
+
+.tipe{
+    text-align: center;
+    font-family: cursive;
+    color: white;
+   
+}
+
 section{
     display: flex;
     width: 600px;
     height: 430px;
     align-items: center;
+    height: 60%;
+    width: 50%;
+    
 }
 
 section img {
