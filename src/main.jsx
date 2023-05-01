@@ -1,15 +1,15 @@
-import React from 'react'
-import { Formulario } from './Formulario/Formulario.jsx'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import 'bootstrap-icons/font/bootstrap-icons.css'
-import'bootstrap/dist/js/bootstrap.min.js'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/js/bootstrap.min.js';
+import { BrowserRouter } from 'react-router-dom';
+import { Router } from './Routes/Router';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-
-    <Formulario/>
-  </React.StrictMode>,
-)
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
+  </React.StrictMode>
+);
