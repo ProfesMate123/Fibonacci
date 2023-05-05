@@ -40,8 +40,8 @@ export function Menu() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/concerts">
-                  Lorem.
+                <Link className="nav-link" to="/historia">
+                  Historia
                 </Link>
               </li>
               <li className="nav-item">

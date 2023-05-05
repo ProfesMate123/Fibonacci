@@ -4,6 +4,8 @@ import { Menu } from '../Shared/Menu/Menu';
 import { Footer } from '../Shared/Footer/Footer';
 import { Home } from '../Home/Home';
 import { Formulario } from '../Formulario/Formulario';
+import { Story } from '../Story/Story';
+import { Teacher } from '../Teachers/Teachers';
 
 export const Router = () => {
   return (
@@ -12,6 +14,8 @@ export const Router = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/servicios" element={<Services />} />
+        <Route path="/historia" element={<Story />} />
+        <Route path="/profesores" element={<Teachers />} />
         <Route path="/agenda" element={<Formulario />} />
       </Routes>
       <Footer />
