@@ -1,38 +1,33 @@
-.carrusel{
-    background-image: url(https://firebasestorage.googleapis.com/v0/b/fibona-bbfed.appspot.com/o/fondo.jpg?alt=media&token=fb68e000-ce86-4834-adb6-aa9c1136462f);
-
-
+.carrusel {
+  /* background-image: url(https://firebasestorage.googleapis.com/v0/b/fibona-bbfed.appspot.com/o/fondo.jpg?alt=media&token=fb68e000-ce86-4834-adb6-aa9c1136462f); */
 }
 
-.tipe{
-    text-align: center;
-    font-family: cursive;
-    color: white;
-   
+.tipe {
+  text-align: center;
+  font-family: cursive;
+  color: white;
 }
 
-section{
-    display: flex;
-    width: 600px;
-    height: 430px;
-    align-items: center;
-    height: 60%;
-    width: 50%;
-    
+#team {
+  display: flex;
+  width: 600px;
+  height: 430px;
+  align-items: center;
+  height: 60%;
+  width: 50%;
 }
 
-section img {
-    width: 0px;
-    flex-grow: 1;
-    object-fit: cover;
-    opacity: .8;
-    transition: .5s ease;
+#team img {
+  width: 0px;
+  flex-grow: 1;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: 0.5s ease;
 }
 
-section img:hover{
-    cursor: crosshair;
-    width: 300px;
-    opacity: 1;
-    filter: contrast(120%);
-
+#team img:hover {
+  cursor: crosshair;
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
 }

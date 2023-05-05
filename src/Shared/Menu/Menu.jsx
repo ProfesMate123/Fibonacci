@@ -49,6 +49,11 @@ export function Menu() {
                   Profesores
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/equipo">
+                  Nuestro Equipo
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

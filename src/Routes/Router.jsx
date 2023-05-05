@@ -6,7 +6,7 @@ import { Home } from '../Home/Home';
 import { Formulario } from '../Formulario/Formulario';
 import { Story } from '../Story/Story';
 import { Teachers } from '../Teachers/Teachers';
-
+import { Carrusel } from '../Carrusel/Carrusel';
 export const Router = () => {
   return (
     <>
@@ -16,6 +16,7 @@ export const Router = () => {
         <Route path="/servicios" element={<Services />} />
         <Route path="/historia" element={<Story />} />
         <Route path="/profesores" element={<Teachers />} />
+        <Route path="/equipo" element={<Carrusel />} />
         <Route path="/agenda" element={<Formulario />} />
       </Routes>
       <Footer />
