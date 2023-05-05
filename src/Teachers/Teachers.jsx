@@ -1,40 +1,40 @@
-export const Teacher = () => {
-  const teachers = [
+export const Teachers = () => {
+  const teachersArray = [
     {
       id: 1,
-      name: 'Wendy ',
-      subject: 'Algorithm',
-      phone: 3118796534,
-      img: '',
+      name: 'Wendy',
+      subject: 'Algorithms',
+      phone: 3114567890,
+      credits: 3,
+      link: '',
+      img: 'https://firebasestorage.googleapis.com/v0/b/ygttienda.appspot.com/o/1.jpg?alt=media&token=b1903d40-a69f-4300-954c-6d5477559df2',
     },
     {
       id: 2,
-      name: 'Katherine ',
-      subject: 'Calculus',
-      phone: 3115489623,
-      img: '',
+      name: 'Katherine',
+      subject: 'Math',
+      phone: 3114567890,
+      credits: 3,
+      link: '',
+      img: 'https://firebasestorage.googleapis.com/v0/b/ygttienda.appspot.com/o/1.jpg?alt=media&token=b1903d40-a69f-4300-954c-6d5477559df2',
     },
     {
       id: 3,
-      name: 'Yesid',
-      subject: 'Statistics',
-      phone: 3118796534,
-      img: '',
-    },
-    {
-      id: 4,
-      name: 'Sebastian ',
-      subject: 'Math',
-      phone: 3118796534,
-      img: '',
+      name: 'Wendy',
+      subject: 'Algorithms',
+      phone: 3114567890,
+      credits: 3,
+      link: '',
+      img: 'https://firebasestorage.googleapis.com/v0/b/ygttienda.appspot.com/o/1.jpg?alt=media&token=b1903d40-a69f-4300-954c-6d5477559df2',
     },
   ];
 
   return (
     <>
+      {/* you map an array */}
       <div className="container">
         <div className="row">
-          {teachers.map((teacher) => {
+          {teachersArray.map((teacher) => {
             return (
               <div
                 className="card my-3 mx-3"
@@ -49,18 +49,11 @@ export const Teacher = () => {
                 <div className="card-body">
                   <h3 className="card-title text-center">{teacher.name}</h3>
                   <h5 className="card-title text-center">
-                    Contact: {teacher.phone}
+                    Subject: {teacher.subject}
                   </h5>
                   <p className="card-text text-center">
-                    Duration: {feature.duration} min
+                    Credits: {teacher.credits} min
                   </p>
-                  <a
-                    href={feature.link}
-                    className="btn btn-dark d-flex justify-content-around"
-                    target="_blank"
-                  >
-                    Go To Song
-                  </a>
                 </div>
               </div>
             );

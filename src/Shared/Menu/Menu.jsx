@@ -45,23 +45,8 @@ export function Menu() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/shop">
-                  Lorem.
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/featuring">
-                  Lorem.
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/fanzone">
-                  Lorem.
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/registration">
-                  Lorem.
+                <Link className="nav-link" to="/profesores">
+                  Profesores
                 </Link>
               </li>
             </ul>

@@ -5,7 +5,7 @@ import { Footer } from '../Shared/Footer/Footer';
 import { Home } from '../Home/Home';
 import { Formulario } from '../Formulario/Formulario';
 import { Story } from '../Story/Story';
-import { Teacher } from '../Teachers/Teachers';
+import { Teachers } from '../Teachers/Teachers';
 
 export const Router = () => {
   return (
