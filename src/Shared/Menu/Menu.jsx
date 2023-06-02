@@ -54,6 +54,11 @@ export function Menu() {
                   Nuestro Equipo
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/lista">
+                  Lista
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
