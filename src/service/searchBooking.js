@@ -1,4 +1,4 @@
-export const searchBooking = async () => {
+export async function searchBooking (){
   //1 service url
 
   const URL = 'http://pruegaapi20231.vercel.app/buscarReservas';
@@ -13,7 +13,7 @@ export const searchBooking = async () => {
   // 3 communicate with the backend
   //Fetch
 
-  let serverResponse = await fetch(URL, REQUEST);
-  let data = await serverResponse.json();
-  return data;
+  let respuesta = await fetch(URL, REQUEST);
+  let datosConsultados = await respuesta.json();
+  return datosConsultados;
 };

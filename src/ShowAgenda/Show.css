@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.card{
+    position: relative;
+    width: 230px;
+    height: 20%;
+}
+
+.card{
+    transform: perspective(600px) rotateY('180deg');
+    background-color: rgb(192, 187, 164);
+    padding: 25px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 5px 10px green ;
+}

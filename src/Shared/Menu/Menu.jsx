@@ -55,7 +55,7 @@ export function Menu() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/lista">
+                <Link className="nav-link" to="/ShowAgenda">
                   Lista
                 </Link>
               </li>

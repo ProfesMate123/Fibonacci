@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { booking } from '../service/booking';
+import { Carga } from '../Shared/Carga/Carga';
 import Swal from 'sweetalert2';
 
 export function Formulario() {
+
   const [nombre, setNombre] = useState('');
   const [correo, setCorreo] = useState('');
   const [telefono, setTelefono] = useState('');
@@ -12,12 +14,12 @@ export function Formulario() {
   const [errores, setErroress] = useState({});
   const [data, setData] = useState({});
   const [envioFormulario, setEnvioFormulario] = useState(false);
+  const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
-    console.log(errores);
-    console.log(Object.keys(errores));
+    setCargando(false)
     if (Object.keys(errores).length > 0) {
-      Swal.fire('There was an Error');
+      Swal.fire('There was an Error')
     } else if (envioFormulario) {
       let datosEnvio = {
         nombre,
@@ -26,7 +28,7 @@ export function Formulario() {
         hora,
         dia,
         tipo: 2,
-      };
+      }
       Swal.fire('Informacion Enviada');
       console.log(datosEnvio);
       booking(datosEnvio).then(function (respuesta) {
@@ -61,122 +63,143 @@ export function Formulario() {
     }
   }
 
-  return (
-    <>
-      <form onSubmit={validarFormulario} className="m-5">
-        <div className="row">
-          <div className="col-12 col-md-6">
-            <div className="input-group mb-3">
-              <span className="input-group-text" id="basic-addon1">
-                <i className="bi bi-person-circle"></i>
-              </span>
-              <input
-                type="text"
-                className={`form-control ${
-                  errores.nombre ? 'is-invalid' : ''
-                } `}
-                placeholder="Nombre Cliente"
-                id="nombre"
-                value={nombre}
-                onChange={function (evento) {
-                  setNombre(evento.target.value);
-                }}
-              />
-              <div className="invalid-feedback">Please choose a username.</div>
-            </div>
-          </div>
-          <div className="col-12 col-md-6">
-            <div className="input-group mb-3">
-              <span className="input-group-text" id="basic-addon1">
-                @
-              </span>
-              <input
-                type="text"
-                className={`form-control ${
-                  errores.correo ? 'is-invalid' : ''
-                } `}
-                placeholder="Correo cliente"
-                id="correo"
-                value={correo}
-                onChange={function (evento) {
-                  setCorreo(evento.target.value);
-                }}
-              />
-              <div className="invalid-feedback">Please choose a username.</div>
-            </div>
-          </div>
-        </div>
+  if(cargando){
 
-        <div className="row">
-          <div className="col-12">
-            <div className="input-group mb-3">
-              <span className="input-group-text" id="basic-addon1">
-                @
-              </span>
-              <input
-                type="text"
-                className={`form-control ${
-                  errores.telefono ? 'is-invalid' : ''
-                } `}
-                placeholder="Telefono Cliente"
-                id="telefono"
-                value={telefono}
-                onChange={function (evento) {
-                  setTelefono(evento.target.value);
-                }}
-              />
-              <div className="invalid-feedback">Please choose a username.</div>
-            </div>
-          </div>
-        </div>
+    return(
 
-        <div className="row">
-          <div className="col-12 col-md-6">
-            <div className="input-group mb-3">
-              <span className="input-group-text" id="basic-addon1">
-                @
-              </span>
-              <input
-                type="date"
-                className={`form-control ${errores.dia ? 'is-invalid' : ''} `}
-                id="dia"
-                value={dia}
-                onChange={function (evento) {
-                  setDia(evento.target.value);
-                }}
-              />
-              <div className="invalid-feedback">Please choose a username.</div>
-            </div>
-          </div>
-          <div className="col-12 col-md-6">
-            <div className="input-group mb-3">
-              <span className="input-group-text" id="basic-addon1">
-                @
-              </span>
-              <select
-                className={`form-select ${errores.hora ? 'is-invalid' : ''} `}
-                defaultValue={'DEFAULT'}
-                id="hora"
-                onChange={function (evento) {
-                  setHora(evento.target.value);
-                }}
-              >
-                <option value="DEFAULT">Hora:</option>
-                <option value="6:30">6:30 am</option>
-                <option value="7:00">7:00 am</option>
-                <option value="7:30">7:30 am</option>
-              </select>
-            </div>
-          </div>
-        </div>
+      <>
+        <Carga/>
+      </>
 
-        <button
-          type="submit"
-          className="btn btn-dark text-light justify-center"
-        >
-          reservar
-        </button>
-      </form>
-    </>
-  );
+    )
+    
+  }else{
+
+    return (
+      <>
+        <form onSubmit={validarFormulario} className="formulario m-5">
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <div className="input-group mb-3">
+                <span className="input-group-text" id="basic-addon1">
+                  <i className="bi bi-person-circle"></i>
+                </span>
+                <input
+                  type="text"
+                  className={`form-control ${
+                    errores.nombre ? 'is-invalid' : ''
+                  } `}
+                  placeholder="Nombre Cliente"
+                  id="nombre"
+                  value={nombre}
+                  onChange={function (evento) {
+                    setNombre(evento.target.value);
+                  }}
+                />
+                <div className="invalid-feedback">Please choose a username.</div>
+              </div>
+            </div>
+            <div className="col-12 col-md-6">
+              <div className="input-group mb-3">
+                <span className="input-group-text" id="basic-addon1">
+                  @
+                </span>
+                <input
+                  type="text"
+                  className={`form-control ${
+                    errores.correo ? 'is-invalid' : ''
+                  } `}
+                  placeholder="Correo cliente"
+                  id="correo"
+                  value={correo}
+                  onChange={function (evento) {
+                    setCorreo(evento.target.value);
+                  }}
+                />
+                <div className="invalid-feedback">Please choose a username.</div>
+              </div>
+            </div>
+          </div>
+  
+          <div className="row">
+            <div className="col-12">
+              <div className="input-group mb-3">
+                <span className="input-group-text" id="basic-addon1">
+                  @
+                </span>
+                <input
+                  type="text"
+                  className={`form-control ${
+                    errores.telefono ? 'is-invalid' : ''
+                  } `}
+                  placeholder="Telefono Cliente"
+                  id="telefono"
+                  value={telefono}
+                  onChange={function (evento) {
+                    setTelefono(evento.target.value);
+                  }}
+                />
+                <div className="invalid-feedback">Please choose a username.</div>
+              </div>
+            </div>
+          </div>
+  
+          <div className="row">
+            <div className="col-12 col-md-6">
+              <div className="input-group mb-3">
+                <span className="input-group-text" id="basic-addon1">
+                  @
+                </span>
+                <input
+                  type="date"
+                  className={`form-control ${errores.dia ? 'is-invalid' : ''} `}
+                  id="dia"
+                  value={dia}
+                  onChange={function (evento) {
+                    setDia(evento.target.value);
+                  }}
+                />
+                <div className="invalid-feedback">Please choose a username.</div>
+              </div>
+            </div>
+            <div className="col-12 col-md-6">
+              <div className="input-group mb-3">
+                <span className="input-group-text" id="basic-addon1">
+                  @
+                </span>
+                <select
+                  className={`form-select ${errores.hora ? 'is-invalid' : ''} `}
+                  defaultValue={'DEFAULT'}
+                  id="hora"
+                  onChange={function (evento) {
+                    setHora(evento.target.value);
+                  }}
+                >
+                  <option value="DEFAULT">Hora:</option>
+                  <option value="6:30">6:30 am</option>
+                  <option value="7:00">7:00 am</option>
+                  <option value="7:30">7:30 am</option>
+                  <option value="8:00">8:00 am</option>
+                  <option value="8:30">8:30 am</option>
+                  <option value="9:00">9:00 am</option>
+                  <option value="9:30 ">9:30 am</option>
+                  <option value="10:00">10:00 am</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+          <button
+            type="submit"
+            className="btn btn-dark text-light justify-center"
+          >
+            reservar
+          </button>
+        </form>
+      </>
+    );
+
+  }
+
+  
 }

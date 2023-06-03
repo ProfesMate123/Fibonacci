@@ -8,6 +8,7 @@ import { Story } from '../Story/Story';
 import { Teachers } from '../Teachers/Teachers';
 import { Carrusel } from '../Carrusel/Carrusel';
 import { ShowAgenda } from '../ShowAgenda/ShowAgenda';
+
 export const Router = () => {
   return (
     <>
@@ -19,7 +20,7 @@ export const Router = () => {
         <Route path="/profesores" element={<Teachers />} />
         <Route path="/equipo" element={<Carrusel />} />
         <Route path="/agenda" element={<Formulario />} />
-        <Route path="/lista" element={<ShowAgenda />} />
+        <Route path="/ShowAgenda" element={<ShowAgenda />} />
       </Routes>
       <Footer />
     </>
